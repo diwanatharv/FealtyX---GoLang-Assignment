@@ -97,7 +97,7 @@ func DeleteStudentByID(c echo.Context) error {
 		log.Println(err.Error())
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	}
-	return c.JSON(http.StatusNoContent, enums.DeleteSucceeded)
+	return c.JSON(http.StatusOK, enums.DeleteSucceeded)
 }
 func GenerateStudentSummary(c echo.Context) error {
 	id, err := strconv.Atoi(c.Param("id"))
